@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SistemaWebEmpleado.Models.Empleado> 
+@{
+    ViewData["Title"] = "Lista de Empleados";
+}
+@Html.ActionLink("Nuevo", "Create","Empleado")
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(e=> e.Id)</th>
+        <th>@Html.DisplayNameFor(e=> e.Nombre)</th>
+        <th>@Html.DisplayNameFor(e=> e.Apellido)</th>
+        <th>@Html.DisplayNameFor(e=> e.DNI)</th>
+        <th>@Html.DisplayNameFor(e=> e.Legajo)</th>
+        <th>@Html.DisplayNameFor(e=> e.FechaNacimiento)</th>
+        <th>@Html.DisplayNameFor(e=> e.Titulo)</th>
+        <th></th>
+    </tr>
+    @foreach (var empleado in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m=> empleado.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(m=> empleado.Nombre)
+            </td>
+
+            <td>
+                @Html.DisplayFor(m=> empleado.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(m=> empleado.DNI)
+            </td>
+            <td>
+                @Html.DisplayFor(m=> empleado.Legajo)
+            </td>
+            <td>
+                @Html.DisplayFor(m=> empleado.FechaNacimiento)
+            </td>
+            <td>
+                @Html.ActionLink(empleado.Titulo, "IndexByTitle", "Empleado", new{titulo = empleado.Titulo})
+            </td>
+            <td>
+            @Html.ActionLink("Detalle", "Detail", "Empleado",new{id=empleado.Id}) 
+            @Html.ActionLink("Eliminar", "Delete", "Empleado",new{id=empleado.Id})
+            @Html.ActionLink("Editar", "Edit", "Empleado",new{id=empleado.Id})
+            </td>
+
+        </tr>
+    }
+</table>

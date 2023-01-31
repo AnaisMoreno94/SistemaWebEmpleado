@@ -21,10 +21,11 @@ namespace SistemaWebEmpleado.Models
         [StringLength(50)]
         public string Apellido { get; set; }
 
+        //TODO: AgregarRequired
         public int DNI { get; set; }
 
         [Required(ErrorMessage = "Campo Obligatorio")]
-        [RegularExpression("[A-Z]{1}[0-9]{5}")]
+        [RegularExpression("[A-Z]{1}[0-9]{5}", ErrorMessage = "Legajo Invalido")]
         public string Legajo { get; set; }
         
         [CheckValidYearAtributte]
@@ -33,7 +34,7 @@ namespace SistemaWebEmpleado.Models
         [Required(ErrorMessage = "Campo Obligatorio")]
         [Column(TypeName = "varchar(50)")]
         [StringLength(50)]
-        public int Titulo { get; set; }
+        public string Titulo { get; set; }
 
     }
 }

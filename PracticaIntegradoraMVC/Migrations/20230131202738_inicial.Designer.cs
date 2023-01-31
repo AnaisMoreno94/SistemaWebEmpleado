@@ -10,7 +10,7 @@ using SistemaWebEmpleado.Data;
 namespace SistemaWebEmpleado.Migrations
 {
     [DbContext(typeof(DBEmpleadosContext))]
-    [Migration("20230131200015_inicial")]
+    [Migration("20230131202738_inicial")]
     partial class inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
