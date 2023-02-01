@@ -2,7 +2,7 @@
 @{
     ViewData["Title"] = "Detalle Empleado";
 }
-<table>
+<table class="table">
     <tr>
         <th>@Html.DisplayNameFor(e=> e.Id)</th>
         <th>@Html.DisplayNameFor(e=> e.Nombre)</th>
@@ -11,7 +11,7 @@
         <th>@Html.DisplayNameFor(e=> e.Legajo)</th>
         <th>@Html.DisplayNameFor(e=> e.FechaNacimiento)</th>
         <th>@Html.DisplayNameFor(e=> e.Titulo)</th>
-        <th></th>
+        <th>Acciones</th>
     </tr>
    
     
@@ -38,10 +38,14 @@
             <td>
                 @Html.DisplayFor(m=> m.Titulo)
             </td>
-            <td>
-        
-                @Html.ActionLink("Eliminar", "Delete", "Empleado",new{id=Model.Id})
-                @Html.ActionLink("Editar", "Edit", "Empleado",new{id=Model.Id})
+            <td class="acciones">
+                <button class="btn btn btn-amarillo"> 
+                    @Html.ActionLink("Editar", "Edit", "Empleado",new{id=Model.Id})
+                </button>
+
+                <button class="btn btn-rojo">
+                    @Html.ActionLink("Eliminar", "Delete", "Empleado",new{id=Model.Id})
+                </button>
             </td>
 
         </tr>

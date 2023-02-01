@@ -3,23 +3,30 @@
     ViewData["Title"] = "Eliminar Empleado";
 }
 
-<h2>@Model.Nombre</h2>
-<p> ¿Esta seguro de que desea eliminar este Empleado?</p>
+<h3 class="strong"> ¿Esta seguro de que desea eliminar este Empleado?</h3>
 
 @using (Html.BeginForm("Delete", "Empleado", FormMethod.Post))
 {
-    <div>
-        <span>@Html.DisplayNameFor(m=>m.Apellido)</span>
-        <span>@Html.DisplayFor(m=>m.Apellido)</span>
+    <div class="propiedad">
+        <span class="prop-name">@Html.DisplayNameFor(m=>m.Nombre)</span>
+        <span class="prop-value">@Html.DisplayFor(m=>m.Nombre)</span>
     </div>
-    <div>
-        <span>@Html.DisplayNameFor(m=>m.DNI)</span>
-        <span>@Html.DisplayFor(m=>m.DNI)</span>
+    <div class="propiedad">
+        <span class="prop-name">@Html.DisplayNameFor(m=>m.Apellido)</span>
+        <span class="prop-value">@Html.DisplayFor(m=>m.Apellido)</span>
     </div>
-    <div>
-        <span>@Html.DisplayNameFor(m=>m.Legajo)</span>
-        <span>@Html.DisplayFor(m=>m.Legajo)</span>
+
+    <div class="propiedad">
+        <span class="prop-name">@Html.DisplayNameFor(m=>m.DNI)</span>
+        <span class="prop-value">@Html.DisplayFor(m=>m.DNI)</span>
+    </div>
+
+    <div class="propiedad">
+        <span class="prop-name">@Html.DisplayNameFor(m=>m.Legajo)</span>
+        <span class="prop-value">@Html.DisplayFor(m=>m.Legajo)</span>
     </div>
     <input type="submit" action="Delete" value="Borrar">
+    <button class="btn btn-azul">
     @Html.ActionLink("Cancelar","Index", "Empleado")
+    </button>
 }
